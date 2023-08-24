@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./booked.css" />
+    <title></title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="./img/logo.png"></a>
+            <div class="user">
+                <ul>
+                    <li><a href="#"><img src="./img/logout.png" alt="로그아웃"></a></li>
+                    <li><a href="#"><img src="./img/mymegav.png" alt="나의메가브이"></a></li>
+                </ul>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="html/movie.html">영화</a></li>
+                <li><a href="#">극장</a></li>
+                <li><a href="#">예매</a></li>
+                <li><a href="html/store.html">스토어</a></li>
+            </ul>
+            <div class="search">
+                <input type="text" placeholder="영화제목을 입력하세요">
+                <button>검색</button>
+            </div>
+        </nav>
+    </header>
+    <br /><br />
+    <div class="container">
+        <div class="menu">
+            <div class="menu-name">나의MEGAV</div>
+            <ul>
+                <li><a href="booked.html" class="my-link">예매내역</a></li>
+                <li>
+                    <a href="#" class="my-link">영화/스토어 관람권</a>
+                    <ul>
+                        <li><a href="#" class="my-link">영화관람권</a></li>
+                        <li><a href="#" class="my-link">스토어 교환권</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="my-link">MEGAV/제휴쿠폰</a></li>
+                <li>
+                    <a href="#" class="my-link">멤버십 포인트</a>
+                    <ul>
+                        <li><a href="#" class="my-link">포인트 이용내역</a></li>
+                        <li><a href="#" class="my-link">멤버십 카드관리</a></li>
+                        <li><a href="#" class="my-link">MY POINT</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="my-link">나의 무비스토리</a></li>
+                <li><a href="#" class="my-link">나의 이벤트 응모내역</a></li>
+                <li><a href="#" class="my-link">나의 문의내역</a></li>
+                <li><a href="#" class="my-link">자주 쓰는 카드 관리</a></li>
+                <li>
+                    <a href="#" class="my-link">회원정보</a>
+                    <ul>
+                        <li><a href="information.html" class="my-link">개인정보 수정</a></li>
+                        <li><a href="information.html" class="my-link">선택정보 수정</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1 style="text-align: left; margin-left: 20px;">예매 내역</h1>
+            <br /><br>
+            <div class="tab-container">
+                <div class="tab" onclick="openTab(event, 'reservation')">예매내역</div>
+                <div class="tab" onclick="openTab(event, 'cancle')">예매취소내역</div>
+            </div>
+
+            <div id="reservation" class="tab-content">
+                <table>
+                    <tr>
+                        <th style="width: 1000px; padding: 20px; text-align: left;">
+                            구분 &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="reserved" value="current" onchange="showCurrent()" checked />예매내역
+                            <input type="radio" name="reserved" value="past" onchange="showPast()" /> 지난내역
+                            <div id="past" class="past-date" style="display: none; text-align: right;">
+                                <input type="date" />&nbsp;
+                                <button type="button" onclick="toLetReservedLook()">조회</button><br />
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="width: 1000px; height: 300px; padding: 20px; border-top: 1px solid black; border-bottom: 1px solid black; text-align: center;">
+                            <div id="current">예매 내역이 없습니다.</div>
+                            <div id="hiddenid" class="hidden">지난 예매 내역이 없습니다.</div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br /><br /><br /><br /><br /><br />
+                <h3>[예매 안내]</h3>
+                <ul style="line-height: 40px;">
+                    <li>만 4세(48개월) 이상부터는 영화티켓을 반드시 구매하셔야 입장 가능합니다.</li>
+                    <li>예매 변경은 불가능하며, 취소 후 재 예매를 하셔야만 합니다.</li>
+                    <li>메가박스 모바일앱을 이용할 경우 티켓출력없이 모바일티켓을 통해 바로 입장하실 수 있습니다.</li>
+                </ul><br /><br />
+                <h3>[티켓교환 안내]</h3>
+                <ul style="line-height: 40px;">
+                    <li>극장의 무인발권기(KIOSK)를 통해 예매번호 또는 고객확인번호(생년월일+휴대폰번호)를 입력하여 편리하게 티켓을 발권하실 수 있습니다.</li>
+                    <li>무인발권기 이용이 어려우신경우, 티켓교환권을 출력하여 매표소에 방문하시면 티켓을 발권하실 수 있습니다.</li>
+                    <li>(티켓교환권 출력이 어려운경우 예매번호와 신분증을 지참하여 매표소에 방문하시면 티켓을 발권하실 수 있습니다)</li>
+                </ul>
+            </div>
+
+            <div id="cancle" class="tab-content">
+                <table>
+                    <caption>*상영일 기준 7일간 취소내역을 확인하실 수 있습니다.</caption>
+                    <tr>
+                        <th>취소일시</th>
+                        <th>영화명</th>
+                        <th>극장</th>
+                        <th>상영일시</th>
+                        <th>취소금액</th>
+                    </tr>
+                    <tr><td></td><td></td><td style="text-align: center;">내역이 없습니다.</td><td></td><td></td></tr>
+                </table>
+                <br /><br /><br /><br /><br /><br />
+                <h3>[예매취소 안내]</h3><br />
+                <ul style="line-height: 40px;">
+                    <li>온라인(홈페이지/모바일) 예매 취소는 상영시간 20분전까지 입니다.</li>
+                    <li>위탁 예매 사이트 이용 시 취소 및 환불 규정은 해당 사이트 규정을 따릅니다.</li>
+                    <li>
+                        LIVE 공연 콘텐트는 취소 기준은 아래와 같습니다.
+                        <ul>
+                            <li>관람 4일전 : 취소 가능</li>
+                            <li>관람 3일 ~ 1일전 : 취소 수수료 부담 후 취소 가능</li>
+                            <li>관람 당일 : 취소 및 환불 불가</li>
+                        </ul>
+                    </li>
+                    <li>공연 관람시 시작 시간 이후에는 입장이 제한 됩니다</li>
+                    <li>발권된 티켓은 상영시간 전까지 현장 방문 시에만 취소가 가능합니다.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-button">
+                <a href="#"><img src="./img/support.png" alt="고객센터" /><span>고객센터</span></a>
+            </div>
+            <div class="footer-button">
+                <a href="#"><img src="./img/notice.png" alt="공지사항" /><span>공지사항</span></a>
+            </div>
+            <div class="footer-button">
+                <a href="#"><img src="./img/review.png" alt="리뷰" /><span>리뷰</span></a>
+            </div>
+            <div class="footer-button">
+                <a href="#"><img src="./img/board.png" alt="영화이야기" /><span>영화이야기</span></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-a">
+                <img src="./img/logo-footer.png" alt="MEGAV" />
+                <div class="footer-inform">
+                    <p>조선대학교 HackerLogin</p>
+                    <p>대표자명 고나영·김태연</p>
+                    <p>COPYRIGHT &copy; 2023 MEGAV. All rights reserved.</p>
+                </div>
+            </div>
+            <div class="footer-sns">
+                <a href="#"><img src="./img/youtube.png" alt="유튜브는 없지롱" /></a>
+                <a href="https://www.instagram.com/ghona_0/"><img src="./img/insta.jpg" alt="고나영 인스타그램" /></a>
+                <a href="https://www.instagram.com/taetae0925/"><img src="./img/insta.jpg" alt="김태연 인스타그램" /></a>
+                <a href="#"><img src="./img/facebook.png" alt="페이스북도 없지롱" /></a>
+                <a href="#"><img src="./img/twitter.png" alt="트위터도 없지롱" /></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./booked.js"></script>
+</body>
+</html>
