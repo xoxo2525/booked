@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>개인 정보 수정</title>
+    <script src="information.js"></script>
+    <link rel="stylesheet" type="text/css" href="./information.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="main.html"><img src="./img/logo.png"></a>
+            <div class="user">
+                <ul>
+                    <li><a href="loginxmain.html"><img src="./img/logout.png" alt="로그아웃"></a></li>
+                    <li><a href="index.html"><img src="./img/mymegav.png" alt="나의메가브이"></a></li>
+                </ul>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="html/movie.html">영화</a></li>
+                <li><a href="#">극장</a></li>
+                <li><a href="#">예매</a></li>
+                <li><a href="html/store.html">스토어</a></li>
+            </ul>
+            <div class="search">
+                <input type="text" placeholder="영화제목을 입력하세요">
+                <button>검색</button>
+            </div>
+        </nav>
+    </header>
+    <br /><br />
+    <div class="container">
+        <div class="menu">
+            <div class="menu-name">나의MEGAV</div>
+            <ul>
+                <li><a href="index.html" class="my-link">예매내역</a></li>
+                <li>
+                    <a href="#" class="my-link">영화/스토어 관람권</a>
+                    <ul>
+                        <li><a href="#" class="my-link">영화관람권</a></li>
+                        <li><a href="#" class="my-link">스토어 교환권</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="my-link">MEGAV/제휴쿠폰</a></li>
+                <li>
+                    <a href="#" class="my-link">멤버십 포인트</a>
+                    <ul>
+                        <li><a href="#" class="my-link">포인트 이용내역</a></li>
+                        <li><a href="#" class="my-link">멤버십 카드관리</a></li>
+                        <li><a href="#" class="my-link">MY POINT</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="my-link">나의 무비스토리</a></li>
+                <li><a href="#" class="my-link">나의 이벤트 응모내역</a></li>
+                <li><a href="#" class="my-link">나의 문의내역</a></li>
+                <li><a href="#" class="my-link">자주 쓰는 카드 관리</a></li>
+                <li>
+                    <a href="#" class="my-link">회원정보</a>
+                    <ul>
+                        <li><a href="information.html" class="my-link">개인정보 수정</a></li>
+                        <li><a href="#" class="my-link">선택정보 수정</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>개인정보 수정</h1>
+            <h2>*회원님의 정보를 정확히 입력해주세요.</h2>
+            <table>
+                <tr>
+                    <td class="wider1">프로필 사진</td>
+                    <td class="wider2">이미지</td>
+                </tr>
+                <tr>
+                    <td class="wider1">아이디</td>
+                    <td class="wider2">사용자 아이디</td>
+                </tr>
+            </table>
+
+            <table>
+                <caption>기본정보</caption>
+                <tr>
+                    <td class="wider1">이름</td>
+                    <td class="wider2">가입자 이름</td>
+                </tr>
+                <tr>
+                    <td class="wider1">생년월일</td>
+                    <td class="wider2"></td>
+                </tr>
+                <tr>
+                    <td class="wider1">휴대폰</td>
+                    <td class="wider2"></td>
+                </tr>
+                <tr>
+                    <td class="wider1">이메일</td>
+                    <td class="wider2"></td>
+                </tr>
+                <tr>
+                    <td class="wider1">비밀번호</td>
+                    <td class="wider2"></td>
+                </tr>
+                <tr>
+                    <td class="wider1">주소</td>
+                    <td class="wider2"></td>
+                </tr>
+            </table>
+
+            <!--원래 기존에 저장된 정보가 나와야 하는데 아직 정보 저장은 못하기 때문에.. checked 사용-->
+            <table>
+                <caption>포인트 비밀번호 설정</caption>
+                <tr>
+                    <th class="wider1">멤버십 포인트 사용시<br />비밀번호 설정</th>
+                    <th class="wider2">
+                        <input type="radio" name="point_use" value="use">&nbsp;사용&nbsp;&nbsp;
+                        <input type="radio" name="point_use" value="disuse" checked> 사용안함 &nbsp; ※ 안전한 서비스 이용을 위해 포인트 사용시 비밀번호를 사용해주세요
+                    </th>
+                </tr>
+            </table>
+
+            <table>
+                <caption>생년월일 로그인 설정</caption>
+                <tr>
+                    <th class="wider1">무인발권기(KIOSK)<br />기능설정</th>
+                    <th class="wider2">
+                        <input type="radio" name="login_use" value="use">&nbsp;사용&nbsp;&nbsp;
+                        <input type="radio" name="login_use" value="disuse" checked>사용안함 &nbsp; ※ ‘생년월일+휴대폰번호’ 티켓 출력 및 회원 찾기 기능
+                    </th>
+                </tr>
+            </table>
+
+            <table>
+                <caption>간편로그인 계정연동</caption>
+                <tr>
+                    <td class="wider3">구분</td>
+                    <td class="wider4">연동정보</td>
+                    <td class="wider5">연결</td>
+                </tr>
+                <tr>
+                    <td class="wider3">NAVER</td>
+                    <td class="wider4">연결된 계정정보가 없습니다.</td>
+                    <td class="wider5"><button onclick="openLoginLink1()">연결</button></td>
+                </tr>
+                <tr>
+                    <td class="wider3">KAKAO</td>
+                    <td class="wider4">연결된 계정정보가 없습니다.</td>
+                    <td class="wider5"><button onclick="openLoginLink2()">연결</button></td>
+                </tr>
+                <tr>
+                    <td class="wider3">PAYCO</td>
+                    <td class="wider4">연결된 계정정보가 없습니다.</td>
+                    <td class="wider5"><button onclick="openLoginLink3()">연결</button></td>
+                </tr>
+            </table>
+
+            <table>
+                <caption>스페셜 멤버십 가입 내역</caption>
+                <tr>
+                    <th class="wider3">가입정보</th>
+                    <th class="wider4">가입된 정보가 없습니다.</th>
+                    <th class="wider5"><button onclick="openPopup()">스페셜 멤버십 가입 안내</button></th>
+                </tr>
+            </table>
+
+            <div class="buttons-container">
+                <button class="button grey" id="cancleBot">취소</button>&nbsp;&nbsp;
+                <button class="button red" id="updateBot">등록</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-button">
+                <a href="#"><img src="./img/support.png" alt="고객센터" /><span>고객센터</span></a>
+            </div>
+            <div class="footer-button">
+                <a href="#"><img src="./img/notice.png" alt="공지사항" /><span>공지사항</span></a>
+            </div>
+            <div class="footer-button">
+                <a href="#"><img src="./img/review.png" alt="리뷰" /><span>리뷰</span></a>
+            </div>
+            <div class="footer-button">
+                <a href="#"><img src="./img/board.png" alt="영화이야기" /><span>영화이야기</span></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-a">
+                <img src="./img/logo-footer.png" alt="MEGAV" />
+                <div class="footer-inform">
+                    <p>조선대학교 HackerLogin</p>
+                    <p>대표자명 고나영·김태연</p>
+                    <p>COPYRIGHT &copy; 2023 MEGAV. All rights reserved.</p>
+                </div>
+            </div>
+            <div class="footer-sns">
+                <a href="#"><img src="./img/youtube.png" alt="유튜브는 없지롱" /></a>
+                <a href="https://www.instagram.com/ghona_0/"><img src="./img/insta.jpg" alt="고나영 인스타그램" /></a>
+                <a href="https://www.instagram.com/taetae0925/"><img src="./img/insta.jpg" alt="김태연 인스타그램" /></a>
+                <a href="#"><img src="./img/facebook.png" alt="페이스북도 없지롱" /></a>
+                <a href="#"><img src="./img/twitter.png" alt="트위터도 없지롱" /></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
